@@ -70,10 +70,6 @@ class PiHal : public RadioLibHal {
           result = lgGpioClaimInput(_gpioHandle, 0, pin);
           break;
         case PI_OUTPUT:
-          if(pin == 7) {
-              flags = LG_SET_PULL_DOWN;
-          }
-
           result = lgGpioClaimOutput(_gpioHandle, flags, pin, LG_HIGH);
           break;
         default:
