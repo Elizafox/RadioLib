@@ -19,18 +19,15 @@
 // include the hardware abstraction layer
 #include "PiHal.h"
 
-// create a new instance of the HAL class
-// use SPI channel 1, because on Waveshare LoRaWAN Hat,
-// the SX1261 CS is connected to CE1
-PiHal* hal = new PiHal(1);
+// The module is connected to GPIO dev 0, SPI dev 0, channel 0
+PiHal* hal = new PiHal(0, 0, 0);
 
-// now we can create the radio module
-// pinout corresponds to the Waveshare LoRaWAN Hat
+// RFM95 has the following connections:
 // NSS pin:   7
-// DIO1 pin:  17
-// NRST pin:  22
-// BUSY pin:  not connected
-SX1261 radio = new Module(hal, 7, 17, 22, RADIOLIB_NC);
+// DIO1 pin:  5
+// NRST pin:  25
+// BUSY pin:  4
+RFM95 radio = new Module(hal, 7, 5, 25, 4);
 
 // the entry point for the program
 int main(int argc, char** argv) {

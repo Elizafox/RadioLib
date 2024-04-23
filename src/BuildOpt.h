@@ -12,19 +12,19 @@
  *         SPI - full transcript of all SPI communication
  */
 #if !defined(RADIOLIB_DEBUG_BASIC)
-  #define RADIOLIB_DEBUG_BASIC (0)
+  #define RADIOLIB_DEBUG_BASIC (1)
 #endif
 #if !defined(RADIOLIB_DEBUG_PROTOCOL)
-  #define RADIOLIB_DEBUG_PROTOCOL (0)
+  #define RADIOLIB_DEBUG_PROTOCOL (1)
 #endif
 #if !defined(RADIOLIB_DEBUG_SPI)
-  #define RADIOLIB_DEBUG_SPI (0)
+  #define RADIOLIB_DEBUG_SPI (1)
 #endif
 
 // set which output port should be used for debug output
 // may be Serial port (on Arduino) or file like stdout or stderr (on generic platforms)
 #if !defined(RADIOLIB_DEBUG_PORT)
-  #define RADIOLIB_DEBUG_PORT   Serial
+  #define RADIOLIB_DEBUG_PORT   stderr
 #endif
 
 /*
